@@ -1,10 +1,14 @@
-#!/usr/bin/env python3
-# =================================================================
-# SCRIPT: web_service_monitor.py
-# DESCRIPCIÓN: Monitoriza servicios del sistema (estado + disponibilidad web opcional).
-#              Modos: manual (menú interactivo) y automatizado (para cron).
-#              Soporta múltiples servicios, inicio/parada, logs e informes.
-# =================================================================
+#.SYNOPSIS
+#    Script de monitorizacion.
+#.DESCRIPTION
+#    Script que monitoriza los servicios web. 
+#.EXAMPLE
+#    .\monitorizacion.py
+#.NOTES
+#    Autor: Samuel Sáez y Samuel Ruiz
+#    Fecha: 17/12/2025
+#    Version: 1.0
+#    Notas:
 
 import requests
 import datetime
