@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# =================================================================
 #.SYNOPSIS
 #    Script de monitorizacion.
 #.DESCRIPTION
@@ -9,6 +11,7 @@
 #    Fecha: 17/12/2025
 #    Version: 1.0
 #    Notas:
+# =================================================================
 
 import requests
 import datetime
