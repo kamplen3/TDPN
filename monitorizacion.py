@@ -33,7 +33,7 @@ LOG_BASE_DIR = "/var/log/web_service_monitor"
 
 # --- UTILIDADES ---
 def get_daily_dir(base_dir):
-    """Devuelve una ruta dinámica: /base/YYYY-MM-DD/"""
+    """Devuelve una ruta con la fecha: /base/YYYY-MM-DD/"""
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     return os.path.join(base_dir, today)
 
@@ -260,6 +260,19 @@ def main():
             sys.exit(1)
     else:
         services_config = DEFAULT_SERVICES_CONFIG
+
+
+
+    # Crear carpeta "automatico" si se ejecuta en modo cron
+    if args.cron:
+        auto_dir = os.path.join(LOG_BASE_DIR, "automatico")
+        print("Creando directorio automático si no existe...")
+        try:
+            os.makedirs(auto_dir, exist_ok=True)
+        except PermissionError:
+            print(f"❌ No se pudo crear {auto_dir}. Ejecuta con sudo.", file=sys.stderr)
+
+
 
     # Directorio dinámico (por día)
     daily_dir = get_daily_dir(args.log_dir)
