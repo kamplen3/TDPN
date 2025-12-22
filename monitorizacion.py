@@ -24,9 +24,7 @@ import argparse
 # --- CONFIGURACIÓN POR DEFECTO ---
 DEFAULT_SERVICES_CONFIG = {
     "apache2": ["http://localhost", "http://127.0.0.1"],
-    "nginx": ["http://localhost"],
-    "mysql": [],  # Sin verificación web
-    "redis-server": []
+    "mariadb": []  
 }
 LOG_BASE_DIR = "/var/log/web_service_monitor"
 
