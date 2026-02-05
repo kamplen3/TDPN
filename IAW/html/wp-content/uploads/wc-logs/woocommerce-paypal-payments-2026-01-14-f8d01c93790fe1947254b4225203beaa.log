@@ -1,0 +1,36 @@
+2026-01-14T10:46:31+00:00 DEBUG #6746 - [New Request] GET /wp-admin/admin.php
+2026-01-14T10:46:31+00:00 DEBUG #6746 - GET https://api.woocommerce.com/integrations/ppc/v1/customer/partners/K8SKZ36LQBWXJ/merchant-integrations/
+Request failed. WP error message: cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached
+2026-01-14T10:46:31+00:00 WARNING #6746 - No se pudieron obtener los estados de vendedor. CONTEXT: {"args":{"method":"GET","headers":{"Authorization":"Bearer token","Content-Type":"application/json"}},"response":{"errors":{"http_request_failed":["cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached"]},"error_data":[]}}
+2026-01-14T10:46:43+00:00 DEBUG #7016 - [New Request] GET /index.php
+2026-01-14T10:46:43+00:00 DEBUG #7016 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Request failed. WP error message: cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached
+2026-01-14T12:58:52+00:00 DEBUG #5835 - [New Request] GET /wp-admin/admin.php
+2026-01-14T12:58:52+00:00 DEBUG #5835 - GET https://api.woocommerce.com/integrations/ppc/v1/customer/partners/K8SKZ36LQBWXJ/merchant-integrations/
+Request failed. WP error message: cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached
+2026-01-14T12:58:52+00:00 WARNING #5835 - No se pudieron obtener los estados de vendedor. CONTEXT: {"args":{"method":"GET","headers":{"Authorization":"Bearer token","Content-Type":"application/json"}},"response":{"errors":{"http_request_failed":["cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached"]},"error_data":[]}}
+2026-01-14T12:59:04+00:00 DEBUG #2615 - [New Request] GET /index.php
+2026-01-14T12:59:04+00:00 DEBUG #2615 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Request failed. WP error message: cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached
+2026-01-14T12:59:04+00:00 DEBUG #4371 - [New Request] POST /index.php
+2026-01-14T12:59:04+00:00 DEBUG #4371 - Loaded onboarding URL from cache: production-express_checkout-
+2026-01-14T12:59:04+00:00 INFO #4371 - Using cached onboarding URL for: production-express_checkout-
+2026-01-14T12:59:04+00:00 DEBUG #3374 - [New Request] POST /index.php
+2026-01-14T12:59:04+00:00 DEBUG #3374 - Loaded onboarding URL from cache: production-express_checkout-
+2026-01-14T12:59:04+00:00 INFO #3374 - Using cached onboarding URL for: production-express_checkout-
+2026-01-14T12:59:22+00:00 DEBUG #1608 - [New Request] POST /index.php
+2026-01-14T12:59:22+00:00 DEBUG #1608 - Loaded onboarding URL from cache: production-express_checkout-
+2026-01-14T12:59:22+00:00 INFO #1608 - Using cached onboarding URL for: production-express_checkout-
+2026-01-14T12:59:22+00:00 DEBUG #9661 - [New Request] POST /index.php
+2026-01-14T12:59:22+00:00 DEBUG #9661 - Loaded onboarding URL from cache: production-express_checkout-
+2026-01-14T12:59:22+00:00 INFO #9661 - Using cached onboarding URL for: production-express_checkout-
+2026-01-14T13:12:57+00:00 DEBUG #5532 - [New Request] POST /index.php
+2026-01-14T13:12:57+00:00 INFO #5532 - Storing one-time OAuth credentials... CONTEXT: {"shared_id":"BAAQ7UjVdrnPP0Oj_iVQpSPqc0pK9nLEQPSRGr6Tgo0haEkSJEo492j-iBVB6fdJ3GxoCI93ms83ap4eUw","auth_code":"C21AAOuOiTqr8swnv2BFaVZD8nbp79mUXDhbMOhvDjDW-IWBQgDZF35zcbgS-hAZaNjeOX9xf724Ddr_z_6Kf7LAe6M7HW3ZA","use_sandbox":false}
+2026-01-14T17:55:21+00:00 DEBUG #4263 - [New Request] POST /index.php
+2026-01-14T17:55:21+00:00 DEBUG #4263 - Webhook lock acquired for 'unregister'.
+2026-01-14T17:55:21+00:00 DEBUG #4263 - Webhook operation 'unregister' started.
+2026-01-14T17:55:31+00:00 DEBUG #4263 - GET https://api.woocommerce.com/integrations/ppc/v1/notifications/webhooks
+Request failed. WP error message: cURL error 28: Failed to connect to api.woocommerce.com port 443 after 10002 ms: Timeout was reached
+2026-01-14T17:55:31+00:00 ERROR #4263 - Failed to delete webhooks: Not able to load webhooks list.
+2026-01-14T17:55:31+00:00 INFO #4263 - Webhooks deleted.
+2026-01-14T17:55:31+00:00 DEBUG #4263 - Webhook lock released for 'unregister'.
