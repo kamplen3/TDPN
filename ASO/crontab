@@ -1,0 +1,1 @@
+*/15 * * * * /usr/bin/python3 /home/ubuntu/monitorizacion/moni.py --cron
