@@ -1,0 +1,6 @@
+{
+    "apache2": {
+        "urls": ["http://localhost"],
+        "port": 80
+    }
+}
