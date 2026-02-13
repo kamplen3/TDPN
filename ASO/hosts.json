@@ -2,13 +2,13 @@
     "servidores": [
         {
             "nombre": "web1",
-            "host": "10.0.1.30",
+            "host": "10.0.1.64",
             "usuario": "ubuntu",
             "puerto": 22
         },
         {
             "nombre": "web2",
-            "host": "10.0.1.82",
+            "host": "10.0.2.121",
             "usuario": "ubuntu",
             "puerto": 22
         }

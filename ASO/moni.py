@@ -6,7 +6,8 @@
 #    Lee un archivo de máquinas, se conecta por SSH a cada una,
 #    monitoriza servicios, puertos, HTTP y recursos del sistema.
 #.EXAMPLE
-#    ./monitor_remoto.py --hosts hosts.json
+#    ./moni.py 
+#    ./moni.py --cron (para automático) 
 #.NOTES
 #    Autor: Samuel Sáez y Samuel Ruiz (base)
 #    Adaptación remota: integrado con SSH, JSON logs y multi-máquina
@@ -222,6 +223,7 @@ def monitor_remote_machine(machine, services_config, base_dir):
         http_ok = True
         for url in urls:
             try:
+                url = url.replace("{host}", host)
                 start = datetime.datetime.now()
                 r = requests.get(url, timeout=5)
                 elapsed = (datetime.datetime.now() - start).total_seconds()
