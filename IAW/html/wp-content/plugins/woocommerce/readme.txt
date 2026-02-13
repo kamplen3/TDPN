@@ -4,7 +4,7 @@ Tags: online store, ecommerce, shop, shopping cart, sell online
 Requires at least: 6.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 10.4.2
+Stable tag: 10.5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -170,14 +170,14 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 10.4.3 2025-12-22 =
+= 10.5.1 2026-02-10 =
 
 **WooCommerce**
 
-* Fix - Ensure guest orders cannot be read by customers without providing the key and billing address. [#62557](https://github.com/woocommerce/woocommerce/pull/62557)
-* Fix - Fix undo button after cart item removal in the cart shortcode [#62529](https://github.com/woocommerce/woocommerce/pull/62529)
-* Fix - Improve handling of order modified date during HPOS sync on read to prevent infinite loops. [#62532](https://github.com/woocommerce/woocommerce/pull/62532)
-* Update - Add automatic currency transition from BGN to EUR for Bulgaria effective January 1, 2026 [#62478](https://github.com/woocommerce/woocommerce/pull/62478)
+* Fix - Admin: revert to the previous version of the recent reviews widget, as errors have been reported in some setups. [#63195](https://github.com/woocommerce/woocommerce/pull/63195)
+* Fix - Fix issue that caused the shop page not to show up in Divi under certain circumstances [#63205](https://github.com/woocommerce/woocommerce/pull/63205)
+* Fix - Only disable add-to-cart button in variable products when wc-add-to-cart-variation is enqueued [#63194](https://github.com/woocommerce/woocommerce/pull/63194)
+* Enhancement - Add additional validation in the PayPal Standard shipping callback method. [#63193](https://github.com/woocommerce/woocommerce/pull/63193)
 
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).

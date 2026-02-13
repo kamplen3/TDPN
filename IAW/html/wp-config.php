@@ -1,13 +1,4 @@
 <?php
-//Begin Really Simple Security session cookie settings
-@ini_set('session.cookie_httponly', true);
-@ini_set('session.cookie_secure', true);
-@ini_set('session.use_only_cookies', true);
-//END Really Simple Security cookie settings
-//Begin Really Simple Security key
-define('RSSSL_KEY', 'FY3ZRLyJr1vt7chaJ8WfLaAFj3tnvVukGPFjEtZDMQJUo4vALD9z7L2TBUG8Z1wV');
-//END Really Simple Security key
-
 /**
  * The base configuration for WordPress
  *
@@ -26,9 +17,6 @@ define('RSSSL_KEY', 'FY3ZRLyJr1vt7chaJ8WfLaAFj3tnvVukGPFjEtZDMQJUo4vALD9z7L2TBUG
  *
  * @package WordPress
  */
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-    $_SERVER['HTTPS'] = 'on';
-}
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -41,15 +29,13 @@ define( 'DB_USER', 'administrador' );
 define( 'DB_PASSWORD', 'Usuario1' );
 
 /** Database hostname */
-define( 'DB_HOST', 'mariadb.cbc8owua023o.us-east-1.rds.amazonaws.com' );
+define( 'DB_HOST', 'wordpres.cynidlv4stje.us-east-1.rds.amazonaws.com' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
-
 
 /**#@+
  * Authentication unique keys and salts.
@@ -62,14 +48,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '{Kp2P#HB&A:-jpuSVyK/*`_{Dy:J1 tJ*U`5f6Hvh]ah8O!, T|/TDWpC&ynx8{<' );
-define( 'SECURE_AUTH_KEY',  'w2U :/K7%a7R>ulbKl`[4Rz]#C3~L{>=,=5>3fh&4-FF}^,Y]4os1[mIJ#pK[(]n' );
-define( 'LOGGED_IN_KEY',    'Ui8,9zu%e#a)Z|xXlT>}ir@=0}*8:VljzM]xu)$h6TgWMzG[tNBQ[7n*N@o#8r#0' );
-define( 'NONCE_KEY',        '-m19TLU(m{k.}inTF#d(c-AG]^~7Gw0U_X~.[!Z&wpR`5xU`2($FJLNHuk&CXz9.' );
-define( 'AUTH_SALT',        'LH1W`1px0v;7=K*2%ARl1n|6Z?$5p>;FGo[:!YyrBAb&4DZk@~BoH?8|v)Hk?zc_' );
-define( 'SECURE_AUTH_SALT', '63J#Z_b+d%o,*qgbSHJ}u$L_lj+^rmC=n{fh^!{V9s6E+//Z/%9UTzUlo3%FJ5#:' );
-define( 'LOGGED_IN_SALT',   '6Q,saOCdjA;%W_*j:U3E@rfia.Tz:u,Ehv4Mde~=C5rpqABG@mewp7:{V,hH*Xgs' );
-define( 'NONCE_SALT',       '[cgGKZizxzTq,Vd9{l4^$oy>b*Jkrpexlu@Ps0>v/C`$&5AAi&!DN0HUXKqp:d_1' );
+define( 'AUTH_KEY',         'I W{(Z4[OxQ{(C?p;iN3:7lrwMg/c7goTx/5RS`!VdX]~]rwFcB0Wr}R2em6C-3r' );
+define( 'SECURE_AUTH_KEY',  'gpH :^ZcJB>1SwTVrx8O^ KG{%{=^urk<`0H<AdFG@<J~Jjg7yek29k5Afa;oV>x' );
+define( 'LOGGED_IN_KEY',    'E1rlp(H^,CrG?sB={|NX/nTB?e,_/JO`/ODH6Kw/s-gC~p&<ltP*=FYbcy_I#A@F' );
+define( 'NONCE_KEY',        'T`MNF_cj$8y_8}u-jEpOP(uA8QC+re]@:FtkD5*gg[[;f*P~ESMfysKGZ5pp>.H@' );
+define( 'AUTH_SALT',        'X[p-0ra0qLu(|~<#!IpYU6PJN@XDNatVZ3*N%+zhaXIDdkZLowAJS26{9ubZSK(r' );
+define( 'SECURE_AUTH_SALT', '/GnTiUDc7-n[cE]rM8i}Q}1]E+dxu&|.}gXM*%SWR xgk*Me3iPT-:QJ>*O)nOlT' );
+define( 'LOGGED_IN_SALT',   'E!v}nj*1N^w))s0G$da2(!cT~&.G8g3_OZDDC40u:8G,d)p3!G@g!2`K4?Aj(s+v' );
+define( 'NONCE_SALT',       'w7VnqwYbH:QH*UmpdW=[7jy-5]~zA2m#;kBDP{r9dq4Qz@UESwd4HRTF#=$JQ2QQ' );
 
 /**#@-*/
 
@@ -103,13 +89,12 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-define('WP_HOME','http://tdpn.ddns.net');
+define('WP_HOME', 'https://tdpn.ddns.net');
+define('WP_SITEURL', 'https://tdpn.ddns.net');
 
-define('WP_SITEURL','http://tdpn.ddns.net');
-
-define('FORCE_SSL_ADMIN', false);
-$_SERVER['HTTPS'] = 'off';
-
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
 
 /* That's all, stop editing! Happy publishing. */
 
