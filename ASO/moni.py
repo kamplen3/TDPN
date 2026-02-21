@@ -388,7 +388,6 @@ def show_menu_remote(hosts, services_config, base_dir):
 
         # 5) Ver rutas
         elif choice == "5":
-            clear_screen()
             print("Rutas base:")
             print(f"  Directorio base de logs/informes: {base_dir}")
             print("  Cada máquina tendrá su subcarpeta dentro de este directorio.")
