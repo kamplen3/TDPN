@@ -1,0 +1,109 @@
+---
+- name: Configurar proxy Apache (nodo de control)
+  hosts: proxy
+  become: yes
+  tasks:
+    - name: Instalar Apache
+      apt:
+        name: nginx-full
+        state: present
+        update_cache: yes
+
+    - name: Configurar proxy inverso con balanceo
+      copy:
+        src: TDPN/ASO/proxy.conf
+        dest: /etc/nginx/sites-available/proxy.conf
+    - name: Activar sitio proxy
+      shell: |
+        sudo ln -s /etc/nginx/sites-available/proxy.conf /etc/nginx/sites-enabled/
+        sudo systemctl restart nginx 
+
+
+- name: Configurar NAT
+  hosts: nat
+  become: yes
+  tasks:
+    - name: Activar IP forwarding
+      sysctl:
+        name: net.ipv4.ip_forward
+        value: "1"
+        state: present
+        reload: yes
+
+    - name: Configurar iptables NAT
+      shell: |
+        iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+        iptables-save > /etc/iptables.rules
+
+
+- name: Configurar servidores web
+  hosts: web
+  become: yes
+  tasks:
+    - name: Instalar Apache y PHP
+      apt:
+        name:
+          - apache2
+          - php
+          - php-mysql
+          - unzip
+        state: present
+        update_cache: yes
+
+    - name: Descargar WordPress
+      get_url:
+        url: https://wordpress.org/latest.zip
+        dest: /tmp/wp.zip
+
+    - name: Descomprimir WordPress
+      unarchive:
+        src: /tmp/wp.zip
+        dest: /var/www/
+        remote_src: yes
+
+    - name: Permisos WordPress
+      file:
+        path: /var/www/html
+        owner: www-data
+        group: www-data
+        recurse: yes
+
+    - name : Creación de la configuración de Apache para WordPress
+      copy:
+        src: TDPN/ASO/tdpn.conf
+        dest: /etc/apache2/sites-available/tdpn.conf
+
+    - name: Activar sitio WordPress
+      shell: |
+        a2ensite tdpn.conf
+        a2enmod rewrite
+        systemctl restart apache2
+
+- name: Configurar monitorización
+  hosts: monitor
+  become: yes
+  tasks:
+    - name: Instalar Python
+      apt:
+        name: python3
+        state: present
+        update_cache: yes
+
+- name: Script
+  hosts: monitor
+  become: yes
+  tasks:
+    - name: Copy moni.py
+      copy:
+        src: TDPN/ASO/moni.py
+        dest: /home/ubuntu/moni.py
+
+    - name: Copy hosts.json
+      copy:
+        src: TDPN/ASO/hosts.json
+        dest: /home/ubuntu/hosts.json
+
+    - name: Copy services.json
+      copy:
+        src: TDPN/ASO/services.json
+        dest: /home/ubuntu/services.json
